@@ -1,6 +1,7 @@
 package util;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.InetSocketAddress;
@@ -87,7 +88,7 @@ public class MiniBrowser {
             requestHeaders.put("Host", u.getHost() + ":" + port);
             requestHeaders.put("Accept","text/html");
             requestHeaders.put("Connection", "close");
-            requestHeaders.put("User-Agent", "how2j mini browser / jdk1.8.0_251");
+            requestHeaders.put("User-Agent", "mini browser/jdk1.8.0_251");
             if (gzip) {
                 requestHeaders.put("Accept-Encoding", "gzip");
             }
@@ -103,29 +104,37 @@ public class MiniBrowser {
                 String headerLine = header + ":" + requestHeaders.get(header) + "\r\n";
                 httpRequestString.append(headerLine);
             }
+            // 通过clientSocket向服务器传输请求request
             PrintWriter printWriter = new PrintWriter(clientSocket.getOutputStream(), true);
             printWriter.println(httpRequestString);
+            // 通过clientSocket从服务器获取response，浏览器的输入流
             InputStream inputStream = clientSocket.getInputStream();
-            int bufferSize = 1024;
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            byte[] buffer = new byte[bufferSize];
-            while(true) {
-                int length = inputStream.read(buffer);
-                if (length == -1) {
-                    break;
-                }
-                byteArrayOutputStream.write(buffer, 0, length);
-                if (length != bufferSize) {
-                    //说明已经到了结尾
-                    break;
-                }
-            }
-            result = byteArrayOutputStream.toByteArray();
+            result = readBytes(inputStream);
             clientSocket.close();
         }catch(Exception e) {
             e.printStackTrace();
             result = e.toString().getBytes(StandardCharsets.UTF_8);
         }
         return result;
+    }
+
+    public static byte[] readBytes(InputStream inputStream) throws IOException {
+        int bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        while(true) {
+            int length = inputStream.read(buffer);
+            if (length == -1) {
+                // read函数返回-1说明已经读到尾部, 否则返回读到的字符个数
+                break;
+            }
+            byteArrayOutputStream.write(buffer, 0, length);
+            if (length != bufferSize){
+                //表明buffer空间没有被读满，说明也没有下文了
+                break;
+            }
+        }
+        return byteArrayOutputStream.toByteArray();
+
     }
 }
