@@ -30,7 +30,7 @@
       <option name="IGNORE_JAVADOC_PERIOD" value="true" />
       <option name="IGNORE_DUPLICATED_THROWS" value="false" />
       <option name="IGNORE_POINT_TO_ITSELF" value="false" />
-      <option name="myAdditionalJavadocTags" value="date,description：项目的启动类" />
+      <option name="myAdditionalJavadocTags" value="date,description：项目的启动类,description：TODO,description：模拟实现一个小型的浏览器，通过这个浏览器与服务器进行通信" />
     </inspection_tool>
   </profile>
 </component>
