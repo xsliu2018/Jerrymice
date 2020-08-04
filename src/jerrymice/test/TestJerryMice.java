@@ -81,7 +81,7 @@ public class TestJerryMice {
     @Test
     public void testServerXml() {
         String html = getContentString("/b/index.html");
-        Assert.assertEquals(html,"Hello DIY Tomcat from index.html@b");
+        Assert.assertEquals(html,"Hello JerryMice@b");
     }
 
 }

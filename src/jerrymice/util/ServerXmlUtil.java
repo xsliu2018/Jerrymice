@@ -38,5 +38,15 @@ public class ServerXmlUtil {
 
         return result;
     }
-
+    public static String getHostName(){
+        String name = "";
+        try{
+            Document document = Jsoup.parse(Constant.serverXmlFile, "utf-8");
+            Element host = document.select("Host").first();
+            name = host.attr("name");
+        }catch(IOException e){
+            LogFactory.get().error(e);
+        }
+        return name;
+    }
 }

@@ -7,6 +7,7 @@ import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
+import jerrymice.catalina.Host;
 import jerrymice.http.Request;
 import jerrymice.http.Response;
 import jerrymice.util.Constant;
@@ -30,17 +31,14 @@ public class Bootstrap {
      * 定义服务器的端口号
      */
     final static int PORT = 10086;
-    public static Map<String, Context> contextMap = new HashMap<>();
     public static void main(String[] args) {
         try {
             // 打印jvm信息
             logJvm();
-            // 扫描文件夹内的所有应用
-            scanContextOnWebAppsFolder();
-            // 通过配置文件server.xml扫描指定的应用
-            scanContextsByServerXml();
             // 在port端口上新建serverSocket
             ServerSocket serverSocket = new ServerSocket(PORT);
+            // 创建host对象，host对象对于一个配置文件来说是唯一的，所以在循环外创建
+            Host host = new Host();
             // 外部使用一个while循环，当处理完一个Socket的链接请求之后，再处理下一个链接请求
             while (true) {
                 Socket socket = serverSocket.accept();
@@ -48,7 +46,7 @@ public class Bootstrap {
                 Runnable runnable = () -> {
                     try {
                         // 获取输入流，这个输入流表示的是收到一个浏览器客户端的请求
-                        Request request = new Request(socket);
+                        Request request = new Request(socket, host);
 
                         System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
                         Response response = new Response();
@@ -131,49 +129,5 @@ public class Bootstrap {
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write(responseBytes);
         socket.close();
-    }
-
-    /**
-     *
-     * 扫描webapp的根目录，将所有的文件夹(应用)做成Context对象保存在Map中
-     */
-    private static void scanContextOnWebAppsFolder(){
-        LogFactory.get().info("Scanning webapps in webapps...");
-        File[] files = Constant.webappsFolder.listFiles();
-        if (files == null){
-            // 如果应用目录下根本没有应用，那就直接再见报告错误日志
-            LogFactory.get().error(new NoSuchFieldError());
-            return;
-        }
-        for (File file : files){
-            if (!file.isDirectory()) {
-                continue;
-            }
-            loadContext(file);
-        }
-    }
-    private static void loadContext(File folder) {
-        // 对文件夹中的文件进行解析, 获取文件夹名
-        String path = folder.getName();
-        if ("ROOT".equals(path)) {
-            // 如果是根目录的话
-            path = "/";
-        }
-        else {
-            path = "/" + path;
-        }
-        String docBase = folder.getAbsolutePath();
-        // 建立Context对象用于保存path和docBase
-        Context context = new Context(path, docBase);
-        // 将创建好的context放在Map中留待使用
-        contextMap.put(context.getPath(), context);
-    }
-
-    private static void scanContextsByServerXml(){
-        LogFactory.get().info("Scanning webapps from server.xml...");
-        List<Context> contexts = ServerXmlUtil.getContext();
-        for (Context context: contexts){
-            contextMap.put(context.getPath(), context);
-        }
     }
 }
