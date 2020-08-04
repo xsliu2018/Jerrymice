@@ -13,4 +13,10 @@ public class Constant {
             "Content-Type: {}\r\n\r\n";
     public final static File webappsFolder = new File(SystemUtil.get("user.dir"),"webapps");
     public final static File rootFolder = new File(webappsFolder,"ROOT");
+    /**
+     * 增加两个常量用于定位配置文件server.xml
+     */
+    public final static File confFolder = new File(SystemUtil.get("user.dir"), "conf");
+    public final static File serverXmlFile = new File(confFolder, "server.xml");
+
 }

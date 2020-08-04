@@ -10,6 +10,7 @@ import cn.hutool.system.SystemUtil;
 import jerrymice.http.Request;
 import jerrymice.http.Response;
 import jerrymice.util.Constant;
+import jerrymice.util.ServerXmlUtil;
 import sun.awt.windows.WPrinterJob;
 
 import java.io.File;
@@ -17,10 +18,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author ：xiaosong
@@ -34,13 +32,13 @@ public class Bootstrap {
     final static int PORT = 10086;
     public static Map<String, Context> contextMap = new HashMap<>();
     public static void main(String[] args) {
-        System.out.println(SystemUtil.get("user.dir"));;
         try {
             // 打印jvm信息
             logJvm();
-            LogFactory.get().info("Scanning webapps ...");
             // 扫描文件夹内的所有应用
             scanContextOnWebAppsFolder();
+            // 通过配置文件server.xml扫描指定的应用
+            scanContextsByServerXml();
             // 在port端口上新建serverSocket
             ServerSocket serverSocket = new ServerSocket(PORT);
             // 外部使用一个while循环，当处理完一个Socket的链接请求之后，再处理下一个链接请求
@@ -140,6 +138,7 @@ public class Bootstrap {
      * 扫描webapp的根目录，将所有的文件夹(应用)做成Context对象保存在Map中
      */
     private static void scanContextOnWebAppsFolder(){
+        LogFactory.get().info("Scanning webapps in webapps...");
         File[] files = Constant.webappsFolder.listFiles();
         if (files == null){
             // 如果应用目录下根本没有应用，那就直接再见报告错误日志
@@ -168,5 +167,13 @@ public class Bootstrap {
         Context context = new Context(path, docBase);
         // 将创建好的context放在Map中留待使用
         contextMap.put(context.getPath(), context);
+    }
+
+    private static void scanContextsByServerXml(){
+        LogFactory.get().info("Scanning webapps from server.xml...");
+        List<Context> contexts = ServerXmlUtil.getContext();
+        for (Context context: contexts){
+            contextMap.put(context.getPath(), context);
+        }
     }
 }

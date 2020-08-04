@@ -78,5 +78,10 @@ public class TestJerryMice {
         String html = getContentString("/dir1/1.html");
         Assert.assertEquals(html, "this file in webapps/dir1/");
     }
+    @Test
+    public void testServerXml() {
+        String html = getContentString("/b/index.html");
+        Assert.assertEquals(html,"Hello DIY Tomcat from index.html@b");
+    }
 
 }
