@@ -1,4 +1,4 @@
-package demo.Junit;
+package jerrymice.Junit;
 
 import org.junit.Assert;
 import org.junit.Test;

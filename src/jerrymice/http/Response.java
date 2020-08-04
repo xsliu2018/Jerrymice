@@ -1,4 +1,4 @@
-package http;
+package jerrymice.http;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

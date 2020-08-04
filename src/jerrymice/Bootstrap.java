@@ -1,18 +1,23 @@
+package jerrymice;
+
+import jerrymice.catalina.Context;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
-import http.Request;
-import http.Response;
-import util.Constant;
+import jerrymice.http.Request;
+import jerrymice.http.Response;
+import jerrymice.util.Constant;
+import sun.awt.windows.WPrinterJob;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -27,10 +32,15 @@ public class Bootstrap {
      * 定义服务器的端口号
      */
     final static int PORT = 10086;
-
+    public static Map<String, Context> contextMap = new HashMap<>();
     public static void main(String[] args) {
+        System.out.println(SystemUtil.get("user.dir"));;
         try {
+            // 打印jvm信息
             logJvm();
+            LogFactory.get().info("Scanning webapps ...");
+            // 扫描文件夹内的所有应用
+            scanContextOnWebAppsFolder();
             // 在port端口上新建serverSocket
             ServerSocket serverSocket = new ServerSocket(PORT);
             // 外部使用一个while循环，当处理完一个Socket的链接请求之后，再处理下一个链接请求
@@ -50,13 +60,14 @@ public class Bootstrap {
                         if (uri == null) {
                             return;
                         }
+                        Context context = request.getContext();
                         if ("/".equals(uri)) {
                             String html = "Hello JerryMice";
                             response.getWriter().println(html);
                         } else {
                             // removePrefix()方法可以去掉字符串指定的前缀
                             String fileName = StrUtil.removePrefix(uri, "/");
-                            File file = FileUtil.file(Constant.rootFolder, fileName);
+                            File file = FileUtil.file(context.getDocBase(), fileName);
                             if (file.exists()) {
                                 //如果文件存在，那就去试图访问
                                 String fileContent = FileUtil.readUtf8String(file);
@@ -77,7 +88,7 @@ public class Bootstrap {
                         LogFactory.get().error(e);
                     }
                 };
-                util.ThreadUtil.run(runnable);
+                jerrymice.util.ThreadUtil.run(runnable);
             }
         } catch (IOException e) {
             LogFactory.get().error(e);
@@ -122,5 +133,40 @@ public class Bootstrap {
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write(responseBytes);
         socket.close();
+    }
+
+    /**
+     *
+     * 扫描webapp的根目录，将所有的文件夹(应用)做成Context对象保存在Map中
+     */
+    private static void scanContextOnWebAppsFolder(){
+        File[] files = Constant.webappsFolder.listFiles();
+        if (files == null){
+            // 如果应用目录下根本没有应用，那就直接再见报告错误日志
+            LogFactory.get().error(new NoSuchFieldError());
+            return;
+        }
+        for (File file : files){
+            if (!file.isDirectory()) {
+                continue;
+            }
+            loadContext(file);
+        }
+    }
+    private static void loadContext(File folder) {
+        // 对文件夹中的文件进行解析, 获取文件夹名
+        String path = folder.getName();
+        if ("ROOT".equals(path)) {
+            // 如果是根目录的话
+            path = "/";
+        }
+        else {
+            path = "/" + path;
+        }
+        String docBase = folder.getAbsolutePath();
+        // 建立Context对象用于保存path和docBase
+        Context context = new Context(path, docBase);
+        // 将创建好的context放在Map中留待使用
+        contextMap.put(context.getPath(), context);
     }
 }

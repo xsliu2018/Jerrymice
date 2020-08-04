@@ -1,4 +1,4 @@
-package util;
+package jerrymice.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

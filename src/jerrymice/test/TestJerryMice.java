@@ -1,4 +1,4 @@
-package test;
+package jerrymice.test;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.TimeInterval;
@@ -7,7 +7,7 @@ import cn.hutool.core.util.StrUtil;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import util.MiniBrowser;
+import jerrymice.util.MiniBrowser;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -29,11 +29,11 @@ public class TestJerryMice {
         // 测试之前先看服务是否已经启动了
         if (NetUtil.isUsableLocalPort(port)){
             //如果端口被占用，以为这服务已经被启动，否则说明服务还没有启动
-            System.out.println("please start up JerryMice first, then run test");
+            System.out.println("please start up JerryMice first, then run jerrymice.test");
             System.exit(1);
         }
         else {
-            System.out.println("Detected JerryMice already start, now begin test");
+            System.out.println("Detected JerryMice already start, now begin jerrymice.test");
         }
     }
     /**
@@ -70,7 +70,13 @@ public class TestJerryMice {
         // 获取消耗时长，单位为ms
         long duration = timeInterval.intervalMs();
         // 虽然使用多线程对同一个网页进行访问，但由于现在的bootstrap是串行的，所以三个线程缩小喊的时间必然是大于3000ms的
-        Assert.assertTrue(duration > 3000);
+        Assert.assertTrue(duration < 3000);
+    }
+
+    @Test
+    public void testContext(){
+        String html = getContentString("/dir1/1.html");
+        Assert.assertEquals(html, "this file in webapps/dir1/");
     }
 
 }

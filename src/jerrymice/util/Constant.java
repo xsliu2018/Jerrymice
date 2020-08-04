@@ -1,7 +1,6 @@
-package util;
+package jerrymice.util;
 
 import cn.hutool.system.SystemUtil;
-
 import java.io.File;
 
 /**

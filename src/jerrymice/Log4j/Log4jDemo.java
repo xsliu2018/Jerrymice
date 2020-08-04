@@ -1,4 +1,4 @@
-package demo.Log4j;
+package jerrymice.Log4j;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -13,7 +13,7 @@ public class Log4jDemo {
     static Logger logger = Logger.getLogger(Log4jDemo.class);
     public static void main(String[] args) throws InterruptedException{
         // 进行默认配置
-        PropertyConfigurator.configure("D:\\Java\\JavaProject\\Jerrymice\\src\\demo\\Log4j\\log4j.properties");
+        PropertyConfigurator.configure("D:\\Java\\JavaProject\\Jerrymice\\src\\jerrymice.demo\\Log4j\\log4j.properties");
         // 设置输出日志最低级别
         logger.setLevel(Level.DEBUG);
         logger.trace("this is a trace msg");

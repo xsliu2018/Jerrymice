@@ -1,144 +1,487 @@
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:41:16 上午 Bootstrap logJvm
+08 04, 2020 10:41:16 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:44:00 上午 Bootstrap logJvm
+08 04, 2020 10:44:00 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:44:39 上午 Bootstrap logJvm
+08 04, 2020 10:44:39 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:47:27 上午 Bootstrap logJvm
+08 04, 2020 10:47:27 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:52:36 上午 Bootstrap logJvm
+08 04, 2020 10:52:36 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:54:59 上午 Bootstrap logJvm
+08 04, 2020 10:54:59 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 10:56:14 上午 Bootstrap logJvm
+08 04, 2020 10:56:14 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 11:10:03 上午 Bootstrap logJvm
+08 04, 2020 11:10:03 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : Server version:		JerryMice 1.0.0
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : Server build:		2020-08-03
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : OS:	:		Windows 10
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : OS version:		10.0
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : Architecture:		amd64
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : JSM Version:		1.8.0_251-b08
-08 04, 2020 11:11:11 上午 Bootstrap logJvm
+08 04, 2020 11:11:11 上午 jerrymice.Bootstrap logJvm
 INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 15:29:04 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 15:33:18 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 17:16:58 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 17:16:58 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1
+08 04, 2020 17:16:58 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1 has finished in cn.hutool.core.date.TimeInterval@5c29bfd ms
+08 04, 2020 17:16:58 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT
+08 04, 2020 17:16:58 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT has finished in cn.hutool.core.date.TimeInterval@7aec35a ms
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 17:17:59 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 17:17:59 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1
+08 04, 2020 17:17:59 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1 has finished in 1 ms
+08 04, 2020 17:17:59 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT
+08 04, 2020 17:17:59 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 17:47:30 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:143)
+	at jerrymice.Bootstrap.main(Bootstrap.java:41)
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 17:50:58 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:143)
+	at jerrymice.Bootstrap.main(Bootstrap.java:41)
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:00:52 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:144)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:01:28 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:144)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:04:06 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:144)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:08:49 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:145)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:10:56 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:145)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:15:54 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:145)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:19:36 下午 jerrymice.Bootstrap error
+ERROR: 
+java.lang.NoSuchFieldError
+	at jerrymice.Bootstrap.scanContextOnWebAppsFolder(Bootstrap.java:145)
+	at jerrymice.Bootstrap.main(Bootstrap.java:42)
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:19:50 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:19:50 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1
+08 04, 2020 18:19:50 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 04, 2020 18:19:50 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT
+08 04, 2020 18:19:50 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 18:28:12 下午 jerrymice.Bootstrap main
+INFO : Scanning webapps ...
+08 04, 2020 18:28:12 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1
+08 04, 2020 18:28:12 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 04, 2020 18:28:12 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT
+08 04, 2020 18:28:12 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms

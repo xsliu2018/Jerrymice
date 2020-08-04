@@ -1,4 +1,4 @@
-package demo.Junit;
+package jerrymice.Junit;
 
 /**
  * @author ：xiaosong

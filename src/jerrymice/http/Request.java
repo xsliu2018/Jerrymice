@@ -1,8 +1,9 @@
-package http;
+package jerrymice.http;
 
-import cn.hutool.core.text.StrBuilder;
+import jerrymice.Bootstrap;
+import jerrymice.catalina.Context;
 import cn.hutool.core.util.StrUtil;
-import util.MiniBrowser;
+import jerrymice.util.MiniBrowser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,6 +19,34 @@ public class Request {
     private String requestString;
     private String uri;
     private Socket socket;
+    private Context context;
+
+    public Context getContext() {
+        return context;
+    }
+
+    /**
+     * 根据request的uri来解析成Context
+     */
+    public void parseContext(){
+
+        String path = StrUtil.subBetween(uri, "/", "/");
+        if (null == path) {
+            // 如果uri = /timeConsume.html，那么path = null， 经过此处之后path=/
+            path = "/";
+        }
+        else {
+            // uri = /dir1/1.html, 那么path= dir1， 经过此处之后path=/dir1
+            path = "/" + path;
+        }
+        // 根据获取到的path去扫描得到的映射中去寻找这个文件夹
+        context = Bootstrap.contextMap.get(path);
+        if (context == null) {
+            // 如果没有获取到这个context对象，那么说明目录中根本就没有这个应用,或者本身就在根目录下
+            context = Bootstrap.contextMap.get("/");
+        }
+    }
+
 
     /**
      * 构造方法
@@ -29,6 +58,11 @@ public class Request {
             return;
         }
         parseUri();
+        parseContext();
+        // 比如 uri 是 /a/index.html， 获取出来的 Context路径不是 "/”， 那么要修正 uri 为 /index.html
+        if (!"/".equals(context.getPath())){
+            uri = StrUtil.removePrefix(uri, context.getPath());
+        }
     }
     private void parseHttpRequest() throws IOException {
         // 解析Request,服务器端获取浏览器端传过来的请求
@@ -50,6 +84,10 @@ public class Request {
         只需要获取两个空格之间的部分就可以获得请求的uri
          */
         temp = StrUtil.subBetween(requestString, " ", " ");
+        if (!StrUtil.contains(temp, '?')){
+            uri = temp;
+            return;
+        }
         this.uri = StrUtil.subBefore(temp, "?", false);
     }
     public String getUri(){
