@@ -1,19 +1,18 @@
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
-import cn.hutool.core.util.NetUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
-import com.sun.org.apache.xpath.internal.objects.XString;
 import http.Request;
 import http.Response;
 import util.Constant;
 
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -45,12 +44,40 @@ public class Bootstrap {
                 Request request = new Request(socket);
 
                 System.out.println("浏览器的输入信息： \r\n" +request.getRequestString());
-                System.out.println("uri:" + request.getUri());
-                // 打开输出流，准备给客户端输出信息
                 Response response = new Response();
                 // 先将html信息写入到response的Writer的StringWriter中
-                String html = "Hello JerryMice";
-                response.getWriter().println(html);
+                String uri;
+                uri = request.getUri();
+                if (uri == null) {
+                    continue;
+                }
+                if ("/".equals(uri)){
+                    String html = "Hello JerryMice";
+                    response.getWriter().println(html);
+                }
+                else {
+                    // removePrefix()方法可以去掉字符串指定的前缀
+                    String fileName = StrUtil.removePrefix(uri, "/");
+                    File file = FileUtil.file(Constant.rootFolder, fileName);
+                    if (file.exists()){
+                        //如果文件存在，那就去试图访问
+                        String fileContent = FileUtil.readUtf8String(file);
+                        // 写入到response中
+                        response.getWriter().println(fileContent);
+                        // 判断是否是模拟的耗时任务
+                        if ("timeConsume.html".equals(fileName)) {
+                            ThreadUtil.sleep(1000);
+                        }
+                    }
+                    else{
+                        System.out.println("File not found!");
+                    }
+                }
+                System.out.println(uri);
+                // 打开输出流，准备给客户端输出信息
+
+
+
                 handle200(socket, response);
 
             }
