@@ -7,6 +7,7 @@ import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import cn.hutool.system.SystemUtil;
+import jerrymice.catalina.Engine;
 import jerrymice.catalina.Host;
 import jerrymice.http.Request;
 import jerrymice.http.Response;
@@ -38,7 +39,7 @@ public class Bootstrap {
             // 在port端口上新建serverSocket
             ServerSocket serverSocket = new ServerSocket(PORT);
             // 创建host对象，host对象对于一个配置文件来说是唯一的，所以在循环外创建
-            Host host = new Host();
+            Engine engine = new Engine();
             // 外部使用一个while循环，当处理完一个Socket的链接请求之后，再处理下一个链接请求
             while (true) {
                 Socket socket = serverSocket.accept();
@@ -46,7 +47,7 @@ public class Bootstrap {
                 Runnable runnable = () -> {
                     try {
                         // 获取输入流，这个输入流表示的是收到一个浏览器客户端的请求
-                        Request request = new Request(socket, host);
+                        Request request = new Request(socket, engine);
 
                         System.out.println("浏览器的输入信息： \r\n" + request.getRequestString());
                         Response response = new Response();

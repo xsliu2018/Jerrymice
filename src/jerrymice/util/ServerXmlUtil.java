@@ -3,14 +3,18 @@ package jerrymice.util;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.log.LogFactory;
 import jerrymice.catalina.Context;
+import jerrymice.catalina.Engine;
+import jerrymice.catalina.Host;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import javax.print.Doc;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -38,15 +42,41 @@ public class ServerXmlUtil {
 
         return result;
     }
-    public static String getHostName(){
+    public static String getServiceName(){
         String name = "";
         try{
             Document document = Jsoup.parse(Constant.serverXmlFile, "utf-8");
-            Element host = document.select("Host").first();
-            name = host.attr("name");
+            Element service = document.select("Service").first();
+            name = service.attr("name");
         }catch(IOException e){
             LogFactory.get().error(e);
         }
         return name;
+    }
+    public static String getEngineDefaultHost(){
+        String defaultHost = "";
+        try{
+            Document document = Jsoup.parse(Constant.serverXmlFile, "utf-8");
+            Element engine = document.select("Engine").first();
+            defaultHost = engine.attr("defaultHost");
+        }catch(IOException e){
+            LogFactory.get().info(e);
+        }
+        return defaultHost;
+    }
+    public static List<Host> getHosts(Engine engine) {
+        List<Host> hosts = new ArrayList<>();
+        try {
+            Document document = Jsoup.parse(Constant.serverXmlFile, "utf-8");
+            Elements elements = document.select("Host");
+            for (Element element : elements) {
+                String name = element.attr("name");
+                Host host = new Host(name, engine);
+                hosts.add(host);
+            }
+        }catch (IOException e){
+            LogFactory.get().info(e);
+        }
+        return hosts;
     }
 }

@@ -673,3 +673,39 @@ INFO : Scanning webapps from server.xml...
 INFO : Deploying web application directory d:/Java/JavaProject/Jerrymice/webapps/b
 08 04, 2020 22:32:44 下午 jerrymice.catalina.Context <init>
 INFO : Deployment of web application directory d:/Java/JavaProject/Jerrymice/webapps/b has finished in 0 ms
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : Server build:		2020-08-03
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : OS:	:		Windows 10
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : OS version:		10.0
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : Architecture:		amd64
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 04, 2020 23:22:48 下午 jerrymice.Bootstrap logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\b
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\b has finished in 1 ms
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\dir1 has finished in 1 ms
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory d:/Java/JavaProject/Jerrymice/webapps/b
+08 04, 2020 23:22:48 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory d:/Java/JavaProject/Jerrymice/webapps/b has finished in 0 ms

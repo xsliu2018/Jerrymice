@@ -17,9 +17,11 @@ import java.util.Map;
 public class Host {
     private String name;
     private Map<String, Context> contextMap;
+    private Engine engine;
 
-    public Host(){
-        this.name = ServerXmlUtil.getHostName();
+    public Host(String name, Engine engine){
+        this.name = name;
+        this.engine = engine;
         this.contextMap = new HashMap<>();
         // 扫描文件夹内的所有应用
         scanContextOnWebAppsFolder();

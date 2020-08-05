@@ -3,6 +3,7 @@ package jerrymice.http;
 import jerrymice.Bootstrap;
 import jerrymice.catalina.Context;
 import cn.hutool.core.util.StrUtil;
+import jerrymice.catalina.Engine;
 import jerrymice.catalina.Host;
 import jerrymice.util.MiniBrowser;
 
@@ -21,7 +22,7 @@ public class Request {
     private String uri;
     private Socket socket;
     private Context context;
-    private Host host;
+    private Engine engine;
 
     public Context getContext() {
         return context;
@@ -42,10 +43,10 @@ public class Request {
             path = "/" + path;
         }
         // 根据获取到的path去扫描得到的映射中去寻找这个文件夹
-        context = host.getContext(path);
+        context = engine.getDefaultHost().getContext(path);
         if (context == null) {
             // 如果没有获取到这个context对象，那么说明目录中根本就没有这个应用,或者本身就在根目录下
-            context = host.getContext("/");
+            context = engine.getDefaultHost().getContext("/");
         }
     }
 
@@ -53,9 +54,9 @@ public class Request {
     /**
      * 构造方法
      */
-    public Request(Socket socket, Host host) throws IOException {
+    public Request(Socket socket, Engine engine) throws IOException {
         this.socket = socket;
-        this.host = host;
+        this.engine = engine;
         parseHttpRequest();
         if (StrUtil.isEmpty(requestString)){
             return;
