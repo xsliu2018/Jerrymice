@@ -11,12 +11,14 @@ import java.util.List;
  * @date ：2020/8/4 22:59
  */
 public class Engine {
-    private String defaultHost;
+    private final String defaultHost;
     private List<Host> hosts;
+    private Service service;
 
-    public Engine(){
+    public Engine(Service service){
         this.defaultHost = ServerXmlUtil.getEngineDefaultHost();
         this.hosts = ServerXmlUtil.getHosts(this);
+        this.service = service;
         checkDefault();
     }
 
@@ -37,6 +39,10 @@ public class Engine {
             }
         }
         return null;
+    }
+
+    public Service getService(){
+        return service;
     }
 
 
