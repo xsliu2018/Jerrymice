@@ -53,7 +53,6 @@ public class Request {
         if (null == context){
             context = engine.getDefaultHost().getContext("/");
         }
-
     }
 
 

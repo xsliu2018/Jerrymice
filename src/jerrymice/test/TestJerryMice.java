@@ -89,7 +89,7 @@ public class TestJerryMice {
     }
     @Test
     public void test404(){
-        String str = getHttpString("/notppp.html");
+        String str = getHttpString("/c/");
         System.out.println(str);
         Assert.assertTrue(StrUtil.containsAny(str, "HTTP/1.1 404 Not Found"));
     }
