@@ -214,3 +214,46 @@ INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
 INFO : JSM Version:		1.8.0_251-b08
 08 05, 2020 17:07:02 下午 jerrymice.catalina.Server logJvm
 INFO : JVM Vendor:		Oracle Corporation
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProjects\Jerrymice\webapps\b
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProjects\Jerrymice\webapps\b has finished in 2 ms
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProjects\Jerrymice\webapps\dir1
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProjects\Jerrymice\webapps\dir1 has finished in 0 ms
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\Java\JavaProjects\Jerrymice\webapps\ROOT
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\Java\JavaProjects\Jerrymice\webapps\ROOT has finished in 0 ms
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 05, 2020 20:35:05 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 05, 2020 20:35:18 下午 jerrymice.catalina.Server info
+INFO :  This is a deliberately created exception
+java.lang.Exception:  This is a deliberately created exception
+	at jerrymice.catalina.Server.lambda$init$0(Server.java:81)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)

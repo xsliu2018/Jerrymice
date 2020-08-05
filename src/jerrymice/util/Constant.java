@@ -36,4 +36,17 @@ public class Constant {
      * 将这个页面解析成字符串
      */
     public final static String textFormat404 = FileUtil.readUtf8String(not_exist_html);
+    /**
+     *  500错误的头部信息
+     */
+    public final static String responseHead500 = "HTTP/1.1 500 Internal Server Error\r\n"
+            + "Content-Type: text/html\r\n\r\n";
+    /**
+     * 500错误的指定页面
+     */
+    public final static File expected_html = new File(special_folder, "500.html");
+    /**
+     * 将500页面解析成字符串
+     */
+    public final static String textFormat500 = FileUtil.readUtf8String(expected_html);
 }
