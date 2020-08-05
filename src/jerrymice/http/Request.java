@@ -24,7 +24,6 @@ public class Request {
     private Socket socket;
     private Context context;
     private Service service;
-    // private Engine engine;
 
     public Context getContext() {
         return context;
@@ -34,22 +33,27 @@ public class Request {
      * 根据request的uri来解析成Context
      */
     public void parseContext(){
-
+        Engine engine = service.getEngine();
+        // 根据获取到的uri去扫描得到的映射中去寻找这个文件夹,这样/b就能够获取匹配而不一定是/b/
+        context = engine.getDefaultHost().getContext(uri);
+        if (context != null) {
+            return;
+        }
         String path = StrUtil.subBetween(uri, "/", "/");
         if (null == path) {
-            // 如果uri = /timeConsume.html，那么path = null， 经过此处之后path=/
-            path = "/";
+            // 如果uri = /timeConsume.html，那么path = null， 不对uri进行改动
+          path = "/";
         }
         else {
             // uri = /dir1/1.html, 那么path= dir1， 经过此处之后path=/dir1
+            // uri = /b/, path = /b
             path = "/" + path;
         }
-        // 根据获取到的path去扫描得到的映射中去寻找这个文件夹
-        context = service.getEngine().getDefaultHost().getContext(path);
-        if (context == null) {
-            // 如果没有获取到这个context对象，那么说明目录中根本就没有这个应用,或者本身就在根目录下
-            context = service.getEngine().getDefaultHost().getContext("/");
+        context = engine.getDefaultHost().getContext(path);
+        if (null == context){
+            context = engine.getDefaultHost().getContext("/");
         }
+
     }
 
 
@@ -67,7 +71,11 @@ public class Request {
         parseContext();
         // 比如 uri 是 /a/index.html， 获取出来的 Context路径不是 "/”， 那么要修正 uri 为 /index.html
         if (!"/".equals(context.getPath())){
+            // 如果访问的地址是/a，那么经过remove之后uri就变为“”了，考虑到这种情况，让uri等于"/"
             uri = StrUtil.removePrefix(uri, context.getPath());
+            if (StrUtil.isEmpty(uri)){
+                uri = "/";
+            }
         }
     }
     private void parseHttpRequest() throws IOException {

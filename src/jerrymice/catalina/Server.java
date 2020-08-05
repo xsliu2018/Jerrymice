@@ -10,6 +10,7 @@ import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import jerrymice.http.Request;
 import jerrymice.http.Response;
 import jerrymice.util.Constant;
+import jerrymice.util.WebXmlUtil;
 
 import java.awt.*;
 import java.io.File;
@@ -73,30 +74,27 @@ public class Server {
                         }
                         System.out.println("uri:" + uri);
                         Context context = request.getContext();
-                        if ("/".equals(uri)) {
-                            String html = "Hello, JerryMice";
-                            response.getWriter().println(html);
-                        }
                         if ("/500.html".equals(uri)){
                             throw new Exception(" This is a deliberately created exception");
                         }
-                        else {
-                            String fileName = StrUtil.removePrefix(uri, "/");
-                            File file = FileUtil.file(context.getDocBase(), fileName);
-                            if (file.exists()) {
-                                String fileContent = FileUtil.readUtf8String(file);
-                                response.getWriter().println(fileContent);
-
-                                if ("timeConsume.html".equals(fileName)) {
-                                    ThreadUtil.sleep(1000);
-                                }
-                            }
-                            else {
-                                // 访问文件不存在的情况下
-                                handle404(socket, uri);
-                                return;
-                            }
+                        if ("/".equals(uri)) {
+                            uri = WebXmlUtil.getWelcomeFile(request.getContext());
                         }
+                        String fileName = StrUtil.removePrefix(uri, "/");
+                        File file = FileUtil.file(context.getDocBase(), fileName);
+                        if (file.exists()) {
+                            String fileContent = FileUtil.readUtf8String(file);
+                            response.getWriter().println(fileContent);
+
+                            if ("timeConsume.html".equals(fileName)) {
+                                ThreadUtil.sleep(1000);
+                            }
+                        } else {
+                            // 访问文件不存在的情况下
+                            handle404(socket, uri);
+                            return;
+                        }
+
                         handle200(socket, response);
                     }catch (Exception e) {
                         handle500(socket, e);

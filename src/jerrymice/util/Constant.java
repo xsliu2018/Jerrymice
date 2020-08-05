@@ -49,4 +49,10 @@ public class Constant {
      * 将500页面解析成字符串
      */
     public final static String textFormat500 = FileUtil.readUtf8String(expected_html);
+
+    /**
+     * 当context没有指定访问哪个文件时，就遍历这个配置文件中指定的文件，发现哪个，就访问哪个
+     */
+    public final static File webXmlFile = new File(confFolder, "web.xml");
+
 }
