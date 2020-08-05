@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -53,45 +54,53 @@ public class Server {
         }
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     private void init(){
         try {
             int port = 10086;
             ServerSocket serverSocket = new ServerSocket(port);
+
             while (true) {
                 Socket socket = serverSocket.accept();
-                Runnable runnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            Request request = new Request(socket, service);
-                            Response response = new Response();
-                            String uri = request.getUri();
-                            if (null == uri){
-                                return;
-                            }
-                            System.out.println("uri:" + uri);
-                            Context context = request.getContext();
-                            if ("/".equals(uri)) {
-                                String html = "Hello, JerryMice";
-                                response.getWriter().println(html);
+                Runnable runnable = () -> {
+                    try {
+                        Request request = new Request(socket, service);
+                        Response response = new Response();
+                        String uri = request.getUri();
+                        if (null == uri){
+                            return;
+                        }
+                        System.out.println("uri:" + uri);
+                        Context context = request.getContext();
+                        if ("/".equals(uri)) {
+                            String html = "Hello, JerryMice";
+                            response.getWriter().println(html);
+                        }
+                        else {
+                            String fileName = StrUtil.removePrefix(uri, "/");
+                            File file = FileUtil.file(context.getDocBase(), fileName);
+                            if (file.exists()) {
+                                String fileContent = FileUtil.readUtf8String(file);
+                                response.getWriter().println(fileContent);
+
+                                if ("timeConsume.html".equals(fileName)) {
+                                    ThreadUtil.sleep(1000);
+                                }
                             }
                             else {
-                                String fileName = StrUtil.removePrefix(uri, "/");
-                                File file = FileUtil.file(context.getDocBase(), fileName);
-                                if (file.exists()) {
-                                    String fileContent = FileUtil.readUtf8String(file);
-                                    response.getWriter().println(fileContent);
-
-                                    if ("timeConsume.html".equals(fileName)) {
-                                        ThreadUtil.sleep(1000);
-                                    }
-                                }
-                                else {
-                                    response.getWriter().println("File not found!");
-                                }
+                                // 访问文件不存在的情况下
+                                handle404(socket, uri);
+                                return;
                             }
-                            handle200(socket, response);
-                        }catch (IOException e) {
+                        }
+                        handle200(socket, response);
+                    }catch (IOException e) {
+                        LogFactory.get().info(e);
+                    }finally {
+                        // 将socket的关闭提取到最后，因为无论是200的响应还是404的响应都需要关闭socket
+                        try {
+                            socket.close();
+                        }catch (IOException e){
                             LogFactory.get().info(e);
                         }
                     }
@@ -116,6 +125,13 @@ public class Server {
 
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write(responseBytes);
-        socket.close();
+    }
+
+    private static void handle404(Socket socket, String uri) throws IOException{
+        OutputStream outputStream = socket.getOutputStream();
+        String responseText = StrUtil.format(Constant.textFormat404, uri, uri);
+        responseText = Constant.responseHead404 + responseText;
+        byte[] responseBytes = responseText.getBytes(StandardCharsets.UTF_8);
+        outputStream.write(responseBytes);
     }
 }

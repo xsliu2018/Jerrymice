@@ -83,5 +83,14 @@ public class TestJerryMice {
         String html = getContentString("/b/index.html");
         Assert.assertEquals(html,"Hello JerryMice@b");
     }
-
+    private String getHttpString(String uri) {
+        String url = StrUtil.format("http://{}:{}{}", ip, port, uri);
+        return MiniBrowser.getHttpString(url);
+    }
+    @Test
+    public void test404(){
+        String str = getHttpString("/notppp.html");
+        System.out.println(str);
+        Assert.assertTrue(StrUtil.containsAny(str, "HTTP/1.1 404 Not Found"));
+    }
 }

@@ -30,5 +30,4 @@ public class Bootstrap {
         Server server = new Server();
         server.start();
     }
-
 }

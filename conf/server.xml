@@ -3,8 +3,8 @@
     <Service name="Catalina">
         <Engine defaultHost="localhost">
             <Host name="localhost">
-                <Context path="/b" docBase="d:/Java/JavaProject/Jerrymice/webapps/b" />
+                <Context path="/b" docBase="d:/Java/JavaProjects/Jerrymice/webapps/b" />
             </Host>
         </Engine>
     </Service>
-</Server>
+</Server>jianl
