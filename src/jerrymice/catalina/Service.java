@@ -10,8 +10,10 @@ import jerrymice.util.ServerXmlUtil;
 public class Service {
     private final String name;
     private final Engine engine;
+    private Server server;
 
-    public Service(){
+    public Service(Server server){
+        this.server = server;
         this.name = ServerXmlUtil.getServiceName();
         this.engine = new Engine(this);
     }
@@ -21,5 +23,9 @@ public class Service {
     }
     public String getName(){
         return name;
+    }
+
+    public Server getServer(){
+        return server;
     }
 }
