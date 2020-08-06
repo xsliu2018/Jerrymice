@@ -84,9 +84,13 @@ public class Server {
                         String fileName = StrUtil.removePrefix(uri, "/");
                         File file = FileUtil.file(context.getDocBase(), fileName);
                         if (file.exists()) {
+                            // 如果访问的文件存在
                             String fileContent = FileUtil.readUtf8String(file);
                             response.getWriter().println(fileContent);
-
+                            // 通过解析文件的拓展名来获取浏览器处理该文件的type
+                            String extName = FileUtil.extName(file);
+                            String mimeType = WebXmlUtil.getMimeType(extName);
+                            response.setContentType(mimeType);
                             if ("timeConsume.html".equals(fileName)) {
                                 ThreadUtil.sleep(1000);
                             }

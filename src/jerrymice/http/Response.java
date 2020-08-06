@@ -48,4 +48,6 @@ public class Response {
     public void setContentType(String type){
         this.contentType = type;
     }
+
+
 }
