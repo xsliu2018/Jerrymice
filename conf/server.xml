@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Server>
     <Service name="Catalina">
+        <Connector port="10086"/>
+        <Connector port="10087"/>
+        <Connector port="10088"/>
         <Engine defaultHost="localhost">
             <Host name="localhost">
                 <Context path="/b" docBase="d:/Java/JavaProjects/Jerrymice/webapps/b" />
             </Host>
         </Engine>
     </Service>
-</Server>jianl
+</Server>

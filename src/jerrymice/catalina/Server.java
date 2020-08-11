@@ -1,5 +1,7 @@
 package jerrymice.catalina;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
@@ -36,8 +38,12 @@ public class Server {
     }
 
     public void start(){
+        TimeInterval timeInterval = DateUtil.timer();
         logJvm();
         init();
+        LogFactory.get().info("Server startup in {} ms", timeInterval.intervalMs());
+
+
     }
     private void logJvm() {
         // 创建一个Map用于保存各种信息
@@ -57,119 +63,7 @@ public class Server {
         }
     }
 
-    @SuppressWarnings("InfiniteLoopStatement")
-    private void init(){
-        try {
-            int port = 10086;
-            ServerSocket serverSocket = new ServerSocket(port);
-
-            while (true) {
-                Socket socket = serverSocket.accept();
-                Runnable runnable = () -> {
-                    try {
-                        Request request = new Request(socket, service);
-                        Response response = new Response();
-                        String uri = request.getUri();
-                        if (null == uri){
-                            return;
-                        }
-                        System.out.println("uri:" + uri);
-                        Context context = request.getContext();
-                        if ("/500.html".equals(uri)){
-                            throw new Exception(" This is a deliberately created exception");
-                        }
-                        if ("/".equals(uri)) {
-                            uri = WebXmlUtil.getWelcomeFile(request.getContext());
-                        }
-                        String fileName = StrUtil.removePrefix(uri, "/");
-                        File file = FileUtil.file(context.getDocBase(), fileName);
-                        if (file.exists()) {
-                            // 如果访问的文件存在
-                            String fileContent = FileUtil.readUtf8String(file);
-                            response.getWriter().println(fileContent);
-                            // 通过解析文件的拓展名来获取浏览器处理该文件的type
-                            String extName = FileUtil.extName(file);
-                            String mimeType = WebXmlUtil.getMimeType(extName);
-                            response.setContentType(mimeType);
-                            if ("timeConsume.html".equals(fileName)) {
-                                ThreadUtil.sleep(1000);
-                            }
-                        } else {
-                            // 访问文件不存在的情况下
-                            handle404(socket, uri);
-                            return;
-                        }
-
-                        handle200(socket, response);
-                    }catch (Exception e) {
-                        handle500(socket, e);
-                        LogFactory.get().info(e);
-                    }finally {
-                        // 将socket的关闭提取到最后，因为无论是200的响应还是404的响应都需要关闭socket
-                        try {
-                            socket.close();
-                        }catch (IOException e){
-                            LogFactory.get().info(e);
-                        }
-                    }
-                };
-                jerrymice.util.ThreadUtil.run(runnable);
-            }
-        }catch (IOException e) {
-            LogFactory.get().info(e);
-        }
-    }
-    private static void handle200(Socket socket, Response response) throws IOException {
-        // 获取类型
-        String contentType = response.getContentType();
-        String headText = Constant.responseHead200;
-        headText = StrUtil.format(headText, contentType);
-        byte[] head = headText.getBytes();
-        // 获取response中的html文本，这个html文本是通过writer写到stringWriter字符流上的
-        byte[] body = response.getBody();
-        byte[] responseBytes = new byte[head.length + body.length];
-        ArrayUtil.copy(head, 0, responseBytes, 0, head.length);
-        ArrayUtil.copy(body, 0, responseBytes, head.length, body.length);
-
-        OutputStream outputStream = socket.getOutputStream();
-        outputStream.write(responseBytes);
-    }
-
-    private static void handle404(Socket socket, String uri) throws IOException{
-        OutputStream outputStream = socket.getOutputStream();
-        String responseText = StrUtil.format(Constant.textFormat404, uri, uri);
-        responseText = Constant.responseHead404 + responseText;
-        byte[] responseBytes = responseText.getBytes(StandardCharsets.UTF_8);
-        outputStream.write(responseBytes);
-    }
-    protected void handle500(Socket socket, Exception exception){
-        try {
-            OutputStream outputStream = socket.getOutputStream();
-            //当发生异常时，首先Exception的异常堆栈，比如做一些平常的任务时，当异常发生时，会出错的位置和依次调用的信息，这些信息就是放在
-            //异常堆栈中的,异常堆栈并不包含这个异常本身
-            StackTraceElement[] stackTraceElements = exception.getStackTrace();
-            // 准备一个StringBuilder来将这些信息装起来
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(exception.toString());
-            stringBuilder.append("\r\n");
-            for (StackTraceElement element : stackTraceElements) {
-                stringBuilder.append("\t");
-                stringBuilder.append(element.toString());
-                stringBuilder.append("\r\n");
-            }
-
-            String msg = exception.getMessage();
-
-            if (null != msg && msg.length() > 20) {
-                msg = msg.substring(0, 19);
-            }
-
-            String text = StrUtil.format(Constant.textFormat500, msg, exception.toString(), stringBuilder.toString());
-            text = Constant.responseHead500 + text;
-            byte[] responseBytes = text.getBytes();
-            outputStream.write(responseBytes);
-        }catch(IOException e) {
-            LogFactory.get().info(e);
-        }
+    public void init(){
+        service.start();
     }
 }

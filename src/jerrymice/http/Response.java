@@ -3,6 +3,7 @@ package jerrymice.http;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author ：xiaosong
@@ -22,10 +23,12 @@ public class Response {
      *  Content-type ，默认是 "text/html"
      */
     private String contentType;
+    private byte[] body;
     public Response(){
         this.stringWriter = new StringWriter();
         this.writer = new PrintWriter(stringWriter);
         this.contentType = "text/html";
+
     }
     public String getContentType() {
         return contentType;
@@ -40,14 +43,21 @@ public class Response {
      * @throws UnsupportedEncodingException
      */
     public byte[] getBody() throws UnsupportedEncodingException {
+        if (body == null) {
+            throw new UnsupportedEncodingException();
 
-        // 将stringWriter字符流转换成string，然后再转换成字符数组
-        String content = stringWriter.toString();
-        return content.getBytes();
+        }
+        return body;
     }
     public void setContentType(String type){
         this.contentType = type;
     }
+
+    public void setBody(byte[] body) {
+        this.body = body;
+    }
+
+
 
 
 }

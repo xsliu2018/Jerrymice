@@ -1,14 +1,19 @@
 package jerrymice.util;
 
+import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
+import jerrymice.catalina.Connector;
 import jerrymice.catalina.Context;
+import jerrymice.catalina.Service;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -55,5 +60,20 @@ public class WebXmlUtil {
             String mimeType = element.selectFirst("mime-type").text();
             mimeTypeMapping.put(extName, mimeType);
         }
+    }
+
+    public static List<Connector> getConnectors(Service service){
+        //一个service对应着多个connector
+        List<Connector> connectors = new ArrayList<>();
+        String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
+        Document document = Jsoup.parse(xml);
+        Elements elements = document.select("Connector");
+        for (Element element : elements){
+            int port = Convert.toInt(element.attr("port"));
+            Connector connector = new Connector(service);
+            connector.setPort(port);
+            connectors.add(connector);
+        }
+        return connectors;
     }
 }
