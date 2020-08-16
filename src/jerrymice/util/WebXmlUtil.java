@@ -61,19 +61,4 @@ public class WebXmlUtil {
             mimeTypeMapping.put(extName, mimeType);
         }
     }
-
-    public static List<Connector> getConnectors(Service service){
-        //一个service对应着多个connector
-        List<Connector> connectors = new ArrayList<>();
-        String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
-        Document document = Jsoup.parse(xml);
-        Elements elements = document.select("Connector");
-        for (Element element : elements){
-            int port = Convert.toInt(element.attr("port"));
-            Connector connector = new Connector(service);
-            connector.setPort(port);
-            connectors.add(connector);
-        }
-        return connectors;
-    }
 }

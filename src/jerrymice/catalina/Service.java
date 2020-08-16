@@ -24,7 +24,7 @@ public class Service {
         this.server = server;
         this.name = ServerXmlUtil.getServiceName();
         this.engine = new Engine(this);
-        this.connectors = WebXmlUtil.getConnectors(this);
+        this.connectors = ServerXmlUtil.getConnectors(this);
     }
 
     public Engine getEngine(){

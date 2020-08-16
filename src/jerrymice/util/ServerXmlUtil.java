@@ -1,10 +1,9 @@
 package jerrymice.util;
 
+import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.log.LogFactory;
-import jerrymice.catalina.Context;
-import jerrymice.catalina.Engine;
-import jerrymice.catalina.Host;
+import jerrymice.catalina.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -78,5 +77,20 @@ public class ServerXmlUtil {
             LogFactory.get().info(e);
         }
         return hosts;
+    }
+
+    public static List<Connector> getConnectors(Service service){
+        //一个service对应着多个connector
+        List<Connector> connectors = new ArrayList<>();
+        String xml = FileUtil.readUtf8String(Constant.serverXmlFile);
+        Document document = Jsoup.parse(xml);
+        Elements elements = document.select("Connector");
+        for (Element element : elements){
+            int port = Convert.toInt(element.attr("port"));
+            Connector connector = new Connector(service);
+            connector.setPort(port);
+            connectors.add(connector);
+        }
+        return connectors;
     }
 }
