@@ -1,6 +1,7 @@
 package jerrymice.catalina;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
@@ -8,6 +9,8 @@ import jerrymice.http.Request;
 import jerrymice.http.Response;
 import jerrymice.util.Constant;
 import jerrymice.util.WebXmlUtil;
+import jerrymice.webappservlet.HelloServlet;
+import sun.awt.windows.WPrinterJob;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +28,7 @@ public class HttpServer {
         // 处理请求和响应
         try{
             String uri = request.getUri();
+            System.out.println(uri);
             if (uri == null) {
                 // 说明此时没有请求过来
                 return;
@@ -33,25 +37,39 @@ public class HttpServer {
             if ("/500.html".equals(uri)) {
                 throw new Exception("this is a deliberately created ");
             }
-            if ("/".equals(uri)){
-                //如果访问根目录
-                uri = WebXmlUtil.getWelcomeFile(request.getContext());
-            }
-            String fileName = StrUtil.removePrefix(uri, "/");
-            // 获取文件名
-            File file = FileUtil.file(context.getDocBase(), fileName);
-            // 通过context获取文件夹，然后通过文件夹和文件名来获取文件
-            if (file.exists()){
-                // 如果访问的文件存在，就根据这个获取后缀名
-                String extName = FileUtil.extName(file);
-                // 根据后缀名获取浏览器解析该文件时使用的mimeType
-                String mimeType = WebXmlUtil.getMimeType(extName);
-                response.setContentType(mimeType);
+            if ("/hello".equals(uri)){
+                HelloServlet servlet = new HelloServlet();
+                servlet.doGet(request, response);
             }
             else{
-                //文件不存在，返回404错误
-                handle404(socket, uri);
-               return;
+
+                if ("/".equals(uri)){
+                    //如果访问根目录
+                    uri = WebXmlUtil.getWelcomeFile(request.getContext());
+                }
+                String fileName = StrUtil.removePrefix(uri, "/");
+                // 获取文件名
+                File file = FileUtil.file(context.getDocBase(), fileName);
+                // 通过context获取文件夹，然后通过文件夹和文件名来获取文件
+                if (file.exists()){
+                    // 如果访问的文件存在，就根据这个获取后缀名
+                    String extName = FileUtil.extName(file);
+                    // 根据后缀名获取浏览器解析该文件时使用的mimeType
+                    String mimeType = WebXmlUtil.getMimeType(extName);
+                    response.setContentType(mimeType);
+
+                    byte[] body = FileUtil.readBytes(file);
+                    response.setBody(body);
+                    if (fileName.equals("timeConsume.html")){
+                        ThreadUtil.sleep(1000);
+                    }
+                }
+
+                else{
+                    //文件不存在，返回404错误
+                    handle404(socket, uri);
+                    return;
+                }
             }
             handle200(socket, response);
         }catch (Exception e) {
@@ -86,6 +104,7 @@ public class HttpServer {
     private void handle200(Socket socket, Response response) throws IOException{
         String contentType = response.getContentType();
         String headText = Constant.responseHead200;
+        headText = StrUtil.format(headText, contentType);
         byte[] head = headText.getBytes();
         byte[] body = response.getBody();
         byte[] responseBytes = new byte[head.length + body.length];

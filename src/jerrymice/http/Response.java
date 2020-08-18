@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
  * @description：TODO
  * @date ：2020/8/3 21:43
  */
-public class Response {
+public class Response extends BaseResponse{
     /**
      * 用于存放返回的 html 文本
      */
@@ -44,7 +44,8 @@ public class Response {
      */
     public byte[] getBody() throws UnsupportedEncodingException {
         if (body == null) {
-            throw new UnsupportedEncodingException();
+           String content = stringWriter.toString();
+           body = content.getBytes("utf-8");
 
         }
         return body;

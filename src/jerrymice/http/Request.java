@@ -18,7 +18,7 @@ import java.nio.charset.StandardCharsets;
  * @description：TODO
  * @date ：2020/8/3 20:44
  */
-public class Request {
+public class Request extends BaseRequest{
     private String requestString;
     private String uri;
     private Socket socket;
