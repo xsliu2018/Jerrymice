@@ -55,36 +55,10 @@ public class Connector implements Runnable{
                     try {
                         Request request = new Request(socket, service);
                         Response response = new Response();
-                        String uri = request.getUri();
-                        Context context = request.getContext();
-                        if ("/500.html".equals(uri)) {
-                            throw new Exception("this is a deliberately create exception");
-                        }
-                        if ("/".equals(uri)) {
-                            uri = WebXmlUtil.getWelcomeFile(request.getContext());
-                        }
-                        String filename = StrUtil.removePrefix(uri, "/");
-                        File file = FileUtil.file(context.getDocBase(), filename);
-                        if (file.exists()){
-                            // 如果文件存在
-                            byte[] body = FileUtil.readBytes(file);
-                            response.setBody(body);
-                            // 通过解析文件的扩展名来获取浏览器的mimeType
-                            String extName = FileUtil.extName(file);
-                            String mimeType = WebXmlUtil.getMimeType(extName);
-                            response.setContentType(mimeType);
-                            if ("timeConsume.html".equals(filename)){
-                                Thread.sleep(1000);
-                            }
-                        }else {
-                            // 访问文件不存在的情况下
-                            handle404(socket, uri);
-                            return;
-                        }
-                        handle200(socket, response);
+                        HttpServer httpServer = new HttpServer();
+                        httpServer.execute(socket, request, response);
                     }catch (Exception e){
                         handle500(socket, e);
-                        LogFactory.get().info(e);
                     }finally {
                         // 将socket的关闭提取到最后
                         try{
