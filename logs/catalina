@@ -842,3 +842,391 @@ INFO : Starting ProtocolHandler [http-bio-10087]
 INFO : Starting ProtocolHandler [http-bio-10088]
 08 18, 2020 22:12:29 下午 jerrymice.catalina.Server start
 INFO : Server startup in 4 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Context <init>
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Service init
+INFO : Initialization processed in 0 ms
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 11:05:09 上午 jerrymice.catalina.Server start
+INFO : Server startup in 3 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 2 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 1 ms
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 17:40:06 下午 jerrymice.catalina.Server start
+INFO : Server startup in 4 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 2 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 1 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-{}], port
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 1 ms
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 17:53:13 下午 jerrymice.catalina.Server start
+INFO : Server startup in 3 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 1 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 1 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 2 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10086]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10087]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10088]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 1 ms
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 17:54:07 下午 jerrymice.catalina.Server start
+INFO : Server startup in 5 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 1 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 2 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10086]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10087]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10088]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 1 ms
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 17:56:02 下午 jerrymice.catalina.Server start
+INFO : Server startup in 4 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 1 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10086]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10087]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10088]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 1 ms
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 17:57:36 下午 jerrymice.catalina.Server start
+INFO : Server startup in 4 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\b
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\b has finished in 2 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\dir1
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\dir1 has finished in 0 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\j2ee
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\j2ee has finished in 3 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory D:\JavaProject\Jerrymice\webapps\ROOT
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory D:\JavaProject\Jerrymice\webapps\ROOT has finished in 0 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deploying web application directory d:/Java/JavaProjects/Jerrymice/webapps/b
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory d:/Java/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : OS:	:		Windows 10
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : OS version:		10.0
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : Architecture:		amd64
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : Java Home:		D:\Java\jdk1.8.0_251\jre
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_251-b08
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10086]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10087]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10088]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Service init
+INFO : Initialization processed in 0 ms
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+08 19, 2020 18:04:20 下午 jerrymice.catalina.Server start
+INFO : Server startup in 4 ms

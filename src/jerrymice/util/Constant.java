@@ -55,4 +55,6 @@ public class Constant {
      */
     public final static File webXmlFile = new File(confFolder, "web.xml");
 
+    public final static File contextFile = new File(confFolder, "context.xml");
+
 }

@@ -37,7 +37,7 @@ public class Connector implements Runnable{
     }
 
     public void init(){
-        LogFactory.get().info("Initializing Protocol [http-bio-{}], port");
+        LogFactory.get().info("Initializing Protocol [http-bio-{}]", port);
     }
 
     public void start(){

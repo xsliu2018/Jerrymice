@@ -3,6 +3,7 @@ package jerrymice.catalina;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.core.util.ArrayUtil;
+import cn.hutool.core.util.ReflectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
 import jerrymice.http.Request;
@@ -33,15 +34,20 @@ public class HttpServer {
                 // 说明此时没有请求过来
                 return;
             }
+            // 获取request的context,context的path是访问的文件夹路径，docBase是实际在系统中的绝对路径
             Context context = request.getContext();
-            if ("/500.html".equals(uri)) {
-                throw new Exception("this is a deliberately created ");
-            }
-            if ("/hello".equals(uri)){
-                HelloServlet servlet = new HelloServlet();
-                servlet.doGet(request, response);
+            // 根据context和uri来获取className
+            String servletClassName = context.getServletClassName(uri);
+            if (null != servletClassName) {
+                // 如果请求的类存在,根据反射获取这个类的一个实例
+                Object servletObj = ReflectUtil.newInstance(servletClassName);
+                // 调用这个对象的方法
+                ReflectUtil.invoke(servletObj, "doGet", request, response);
             }
             else{
+                if ("/500.html".equals(uri)) {
+                    throw new Exception("this is a deliberately created ");
+                }
 
                 if ("/".equals(uri)){
                     //如果访问根目录
