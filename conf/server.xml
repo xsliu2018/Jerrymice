@@ -6,7 +6,7 @@
         <Connector port="10088"/>
         <Engine defaultHost="localhost">
             <Host name="localhost">
-                <Context path="/b" docBase="d:/Java/JavaProjects/Jerrymice/webapps/b" />
+                <Context path="/b" docBase="d:/JavaProject/Jerrymice/webapps/b" />
             </Host>
         </Engine>
     </Service>

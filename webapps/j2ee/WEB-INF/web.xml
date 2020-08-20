@@ -2,7 +2,7 @@
 <web-app>
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
-        <servlet-class>jerrymice.webappservlet.HelloServlet</servlet-class>
+        <servlet-class>cn.java.jerrymice.webappservlet.HelloServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
