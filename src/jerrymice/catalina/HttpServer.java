@@ -10,6 +10,7 @@ import jerrymice.http.Request;
 import jerrymice.http.Response;
 import jerrymice.util.Constant;
 import jerrymice.util.WebXmlUtil;
+import jerrymice.webappservlet.DefaultServlet;
 import jerrymice.webappservlet.HelloServlet;
 import jerrymice.webappservlet.InvokeServlet;
 import sun.awt.windows.WPrinterJob;
@@ -40,42 +41,18 @@ public class HttpServer {
             // 根据context和uri来获取className
             String servletClassName = context.getServletClassName(uri);
             if (null != servletClassName) {
-                InvokeServlet.getInstance().service(request, response, servletClassName);
+                InvokeServlet.getInstance().service(request, response);
             }
             else{
-                if ("/500.html".equals(uri)) {
-                    throw new Exception("this is a deliberately created ");
-                }
-
-                if ("/".equals(uri)){
-                    //如果访问根目录
-                    uri = WebXmlUtil.getWelcomeFile(request.getContext());
-                }
-                String fileName = StrUtil.removePrefix(uri, "/");
-                // 获取文件名
-                File file = FileUtil.file(context.getDocBase(), fileName);
-                // 通过context获取文件夹，然后通过文件夹和文件名来获取文件
-                if (file.exists()){
-                    // 如果访问的文件存在，就根据这个获取后缀名
-                    String extName = FileUtil.extName(file);
-                    // 根据后缀名获取浏览器解析该文件时使用的mimeType
-                    String mimeType = WebXmlUtil.getMimeType(extName);
-                    response.setContentType(mimeType);
-
-                    byte[] body = FileUtil.readBytes(file);
-                    response.setBody(body);
-                    if (fileName.equals("timeConsume.html")){
-                        ThreadUtil.sleep(1000);
-                    }
-                }
-
-                else{
-                    //文件不存在，返回404错误
-                    handle404(socket, uri);
-                    return;
-                }
+                DefaultServlet.getInstance().service(request, response);
             }
-            handle200(socket, response);
+            if (response.getStatus() == Constant.CODE_200){
+                handle200(socket, response);
+                return;
+            }
+            if (response.getStatus() == Constant.CODE_404){
+                handle404(socket, uri);
+            }
         }catch (Exception e) {
             LogFactory.get().info(e.toString());
             handle500(socket, e);

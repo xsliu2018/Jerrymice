@@ -10,6 +10,11 @@ import java.io.File;
  * @date ：2020/8/3 21:43
  */
 public class Constant {
+    // 响应代码
+    public static final int CODE_200 = 200;
+    public static final int CODE_302 = 302;
+    public static final int CODE_404 = 404;
+    public static final int CODE_500 = 500;
     public final static String responseHead200 = "HTTP/1.1 200 OK\r\n" +
             "Content-Type: {}\r\n\r\n";
     public final static File webappsFolder = new File(SystemUtil.get("user.dir"),"webapps");

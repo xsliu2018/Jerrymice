@@ -4,6 +4,7 @@ import cn.hutool.core.util.ReflectUtil;
 import jerrymice.catalina.Context;
 import jerrymice.http.Request;
 import jerrymice.http.Response;
+import jerrymice.util.Constant;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +20,7 @@ import java.io.IOException;
 public class InvokeServlet {
     private static InvokeServlet instance = new InvokeServlet();
 
-    public static synchronized InvokeServlet getInstance(){
+    public static InvokeServlet getInstance(){
         return instance;
     }
     private InvokeServlet(){
@@ -42,17 +43,13 @@ public class InvokeServlet {
         // 获取context
         Context context = request.getContext();
         // 获取类名
-        String servletName = context.getServletName(uri);
+        String servletName = context.getServletClassName(uri);
         // 获取对应的实例
         Object servletObj = ReflectUtil.newInstance(servletName);
         // 调用service方法
-        cn.hutool.core.util.ReflectUtil.invoke(servletObj, "service", request, response);
+        ReflectUtil.invoke(servletObj, "service", request, response);
+        response.setStatus(Constant.CODE_200);
     }
 
-    public void service(Request request, Response response, String servletClassName){
-        // 获取对应的实例
-        Object servletObj = ReflectUtil.newInstance(servletClassName);
-        // 调用service方法
-        cn.hutool.core.util.ReflectUtil.invoke(servletObj, "service", request, response);
-    }
+
 }

@@ -11,6 +11,7 @@ import java.nio.charset.StandardCharsets;
  * @date ：2020/8/3 21:43
  */
 public class Response extends BaseResponse{
+    private int status;
     /**
      * 用于存放返回的 html 文本
      */
@@ -58,7 +59,15 @@ public class Response extends BaseResponse{
         this.body = body;
     }
 
+    @Override
+    public void setStatus(int status){
+        this.status = status;
+    }
 
+    @Override
+    public int getStatus(){
+        return status;
+    }
 
 
 }
