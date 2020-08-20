@@ -24,6 +24,17 @@ public class Request extends BaseRequest{
     private Socket socket;
     private Context context;
     private Service service;
+    // 获取请求的Method,GET或者POST
+    private String method;
+
+    private void parseMethod(){
+        method = StrUtil.subBefore(requestString, " ", false);
+    }
+
+    @Override
+    public String getMethod() {
+        return method;
+    }
 
     public Context getContext() {
         return context;
@@ -68,6 +79,8 @@ public class Request extends BaseRequest{
         }
         parseUri();
         parseContext();
+        // 在构造对象时，需要解析出其对应的请求方式
+        parseMethod();
         // 比如 uri 是 /a/index.html， 获取出来的 Context路径不是 "/”， 那么要修正 uri 为 /index.html
         if (!"/".equals(context.getPath())){
             // 如果访问的地址是/a，那么经过remove之后uri就变为“”了，考虑到这种情况，让uri等于"/"

@@ -11,6 +11,7 @@ import jerrymice.http.Response;
 import jerrymice.util.Constant;
 import jerrymice.util.WebXmlUtil;
 import jerrymice.webappservlet.HelloServlet;
+import jerrymice.webappservlet.InvokeServlet;
 import sun.awt.windows.WPrinterJob;
 
 import java.io.File;
@@ -39,10 +40,7 @@ public class HttpServer {
             // 根据context和uri来获取className
             String servletClassName = context.getServletClassName(uri);
             if (null != servletClassName) {
-                // 如果请求的类存在,根据反射获取这个类的一个实例
-                Object servletObj = ReflectUtil.newInstance(servletClassName);
-                // 调用这个对象的方法
-                ReflectUtil.invoke(servletObj, "doGet", request, response);
+                InvokeServlet.getInstance().service(request, response, servletClassName);
             }
             else{
                 if ("/500.html".equals(uri)) {
