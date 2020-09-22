@@ -8,12 +8,16 @@ import cn.hutool.log.LogFactory;
 import cn.java.jerrymice.classloader.CommonClassLoader;
 import cn.java.jerrymice.classloader.WebappClassLoader;
 import cn.java.jerrymice.exception.WebConfigDuplicatedException;
+import cn.java.jerrymice.http.ApplicationContext;
 import cn.java.jerrymice.util.ContextXmlUtil;
+import cn.java.jerrymice.watcher.ContextFileChangeWatcher;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import org.jsoup.nodes.Document;
+
+import javax.servlet.ServletContext;
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,6 +34,8 @@ public class Context {
     private String path;
     private String docBase;
     private File contextWebXmlFile;
+    private Host host;
+    private boolean reloadable;
     //存放地址和对应的Servlet的类名
     private Map<String, String> url_servletClassName;
     //存放地址和对应的Servlet的名称
@@ -38,17 +44,24 @@ public class Context {
     private Map<String, String> servletName_className;
     // 存放Servlet的类名和其对应的名称
     private Map<String, String> className_servletName;
-
+    // 类加载器
     private WebappClassLoader webappClassLoader;
+    // 添加监听器
+    private ContextFileChangeWatcher watcher;
+    // 添加ServletContext
+    private ServletContext servletContext;
 
     /**
      * Context的构造方法
      * @param path
      * @param docBase
      */
-    public Context(String path, String docBase){
+    public Context(String path, String docBase, Host host, boolean reloadable){
         this.path = path;
         this.docBase = docBase;
+        this.reloadable = reloadable;
+        this.host = host;
+        this.servletContext = new ApplicationContext(this);
         // WEB-INF/web.xml
         this.contextWebXmlFile = new File(docBase, ContextXmlUtil.getWatchedResource());
         this.url_servletName = new HashMap<>();
@@ -191,6 +204,94 @@ public class Context {
         TimeInterval timeInterval = DateUtil.timer();
         LogFactory.get().info("Deploying web application directory {}", this.getDocBase());
         init();
-        LogFactory.get().info("Deployment of web application directory {} has finished in {} ms", this.getDocBase(), timeInterval.intervalMs());
+        LogFactory.get().info("Deployment of web application directory {} has finished in {} ms",
+                this.getDocBase(), timeInterval.intervalMs());
+        if (reloadable){
+            watcher = new ContextFileChangeWatcher(this);
+            watcher.start();
+        }
+    }
+    public void stop(){
+        webappClassLoader.stop();
+        watcher.stop();
+    }
+
+    /**
+     * 提供重载方法，当watcher监听到docBase中内容发生了变化时，调用这个方法将对象进行重载
+     */
+    public void reload(){
+
+    }
+
+    public File getContextWebXmlFile() {
+        return contextWebXmlFile;
+    }
+
+    public void setContextWebXmlFile(File contextWebXmlFile) {
+        this.contextWebXmlFile = contextWebXmlFile;
+    }
+
+    public Host getHost() {
+        return host;
+    }
+
+    public void setHost(Host host) {
+        this.host = host;
+    }
+
+    public boolean isReloadable() {
+        return reloadable;
+    }
+
+    public void setReloadable(boolean reloadable) {
+        this.reloadable = reloadable;
+    }
+
+    public Map<String, String> getUrl_servletClassName() {
+        return url_servletClassName;
+    }
+
+    public void setUrl_servletClassName(Map<String, String> url_servletClassName) {
+        this.url_servletClassName = url_servletClassName;
+    }
+
+    public Map<String, String> getUrl_servletName() {
+        return url_servletName;
+    }
+
+    public void setUrl_servletName(Map<String, String> url_servletName) {
+        this.url_servletName = url_servletName;
+    }
+
+    public Map<String, String> getServletName_className() {
+        return servletName_className;
+    }
+
+    public void setServletName_className(Map<String, String> servletName_className) {
+        this.servletName_className = servletName_className;
+    }
+
+    public Map<String, String> getClassName_servletName() {
+        return className_servletName;
+    }
+
+    public void setClassName_servletName(Map<String, String> className_servletName) {
+        this.className_servletName = className_servletName;
+    }
+
+    public void setWebappClassLoader(WebappClassLoader webappClassLoader) {
+        this.webappClassLoader = webappClassLoader;
+    }
+
+    public ContextFileChangeWatcher getWatcher() {
+        return watcher;
+    }
+
+    public void setWatcher(ContextFileChangeWatcher watcher) {
+        this.watcher = watcher;
+    }
+
+    public ServletContext getServletContext(){
+        return this.servletContext;
     }
 }

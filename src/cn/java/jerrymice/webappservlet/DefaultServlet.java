@@ -47,7 +47,7 @@ public class DefaultServlet extends HttpServlet {
             uri = WebXmlUtil.getWelcomeFile(context);
         }
         String fileName = StrUtil.removePrefix(uri, "/");
-        File file = FileUtil.file(context.getDocBase(), fileName);
+        File file = FileUtil.file(request.getRealPath(fileName));
         if (file.exists()){
             String extName = FileUtil.extName(file);
             String mimeType = WebXmlUtil.getMimeType(extName);

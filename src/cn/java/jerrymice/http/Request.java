@@ -6,6 +6,7 @@ import cn.java.jerrymice.catalina.Engine;
 import cn.java.jerrymice.catalina.Service;
 import cn.java.jerrymice.util.MiniBrowser;
 
+import javax.servlet.ServletContext;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
@@ -120,5 +121,13 @@ public class Request extends BaseRequest {
 
     public String getRequestString() {
         return requestString;
+    }
+
+    public ServletContext getServletContext(){
+        return context.getServletContext();
+    }
+
+    public String getRealPath(String path){
+        return getServletContext().getRealPath(path);
     }
 }

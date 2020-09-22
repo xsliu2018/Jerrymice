@@ -66,7 +66,7 @@ public class Host {
         }
         String docBase = folder.getAbsolutePath();
         // 建立Context对象用于保存path和docBase
-        Context context = new Context(path, docBase);
+        Context context = new Context(path, docBase, this, true);
         // 将创建好的context放在Map中留待使用
         contextMap.put(context.getPath(), context);
     }
@@ -74,9 +74,9 @@ public class Host {
     /**
      * 从server.xml文件中获取配置信息
      */
-    private  void scanContextsByServerXml(){
+    private void scanContextsByServerXml(){
         LogFactory.get().info("Scanning webapps from server.xml...");
-        List<Context> contexts = ServerXmlUtil.getContext();
+        List<Context> contexts = ServerXmlUtil.getContext(this);
         for (Context context: contexts){
             contextMap.put(context.getPath(), context);
         }
@@ -87,5 +87,25 @@ public class Host {
      */
     public Context getContext(String path){
         return contextMap.get(path);
+    }
+
+    /**
+     * 对该Host下的某个Context进行重载
+     */
+    public void reload(Context context){
+        LogFactory.get().info("Reloading Context with name [{}] has started", context.getPath());
+        String path = context.getPath();
+        String docBase = context.getDocBase();
+        boolean reloadable = context.isReloadable();
+        // stop
+        context.stop();
+        // remove
+        contextMap.remove(path);
+        // allocate new context
+        Context newContext = new Context(path, docBase, this, reloadable);
+        // add it to map
+        contextMap.put(newContext.getPath(), newContext);
+        LogFactory.get().info("Reloading Context with name [{}] has completed", context.getPath());
+        
     }
 }

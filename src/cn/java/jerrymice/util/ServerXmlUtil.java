@@ -20,7 +20,7 @@ import java.util.List;
  * @date ：2020/8/4 20:59
  */
 public class ServerXmlUtil {
-    public static List<Context> getContext(){
+    public static List<Context> getContext(Host host){
         List<Context> result = new ArrayList<>();
         try{
             Document document = Jsoup.parse(Constant.serverXmlFile, "utf-8");
@@ -29,8 +29,9 @@ public class ServerXmlUtil {
                 // 获取指定的映射路径和绝对路径
                 String path = element.attr("path");
                 String docBase = element.attr("docBase");
+                boolean reloadable = Convert.toBool(element.attr("reloadable"), true);
                 // 新建context对象，用于封装获取的信息
-                Context context = new Context(path, docBase);
+                Context context = new Context(path, docBase, host, reloadable);
                 result.add(context);
             }
         }catch (IOException e){

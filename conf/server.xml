@@ -6,8 +6,8 @@
         <Connector port="10088"/>
         <Engine defaultHost="localhost">
             <Host name="localhost">
-                <Context path="/b" docBase="/Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b" />
-                <context path="/javaweb" docBase="/Volumes/Data/javaweb"/>
+                <Context path="/b" docBase="/Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b" reloadable="true"/>
+                <context path="/javaweb" docBase="/Volumes/Data/javaweb" reloadable="true"/>
             </Host>
         </Engine>
     </Service>
