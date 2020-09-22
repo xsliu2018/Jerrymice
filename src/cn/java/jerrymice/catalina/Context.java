@@ -5,6 +5,8 @@ import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.log.LogFactory;
+import cn.java.jerrymice.classloader.CommonClassLoader;
+import cn.java.jerrymice.classloader.WebappClassLoader;
 import cn.java.jerrymice.exception.WebConfigDuplicatedException;
 import cn.java.jerrymice.util.ContextXmlUtil;
 import org.jsoup.Jsoup;
@@ -37,6 +39,8 @@ public class Context {
     // 存放Servlet的类名和其对应的名称
     private Map<String, String> className_servletName;
 
+    private WebappClassLoader webappClassLoader;
+
     /**
      * Context的构造方法
      * @param path
@@ -51,6 +55,8 @@ public class Context {
         this.url_servletClassName = new HashMap<>();
         this.servletName_className = new HashMap<>();
         this.className_servletName = new HashMap<>();
+        ClassLoader commonClassLoader = Thread.currentThread().getContextClassLoader();
+        this.webappClassLoader = new WebappClassLoader(docBase, commonClassLoader);
 
         deploy();
 
@@ -70,6 +76,10 @@ public class Context {
             return;
         }
         parseServletMapping(document);
+    }
+
+    public WebappClassLoader getWebappClassLoader(){
+        return webappClassLoader;
     }
     public String getPath() {
         return path;

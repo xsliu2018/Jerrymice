@@ -43,10 +43,17 @@ public class InvokeServlet {
         // 获取类名
         String servletName = context.getServletClassName(uri);
         // 获取对应的实例
-        Object servletObj = ReflectUtil.newInstance(servletName);
-        // 调用service方法
-        ReflectUtil.invoke(servletObj, "service", request, response);
-        response.setStatus(Constant.CODE_200);
+        try{
+            Class servletClass = context.getWebappClassLoader().loadClass(servletName);
+            System.out.println("servletClass:" + servletClass);
+            System.out.println("servletClass ClassLoader:" + servletClass.getClassLoader());
+            Object servletObj = ReflectUtil.newInstance(servletClass);
+            // 调用service方法
+            ReflectUtil.invoke(servletObj, "service", request, response);
+            response.setStatus(Constant.CODE_200);
+        }catch (ClassNotFoundException exception){
+            exception.printStackTrace();
+        }
     }
 
 

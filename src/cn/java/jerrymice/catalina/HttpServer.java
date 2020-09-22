@@ -12,6 +12,7 @@ import cn.java.jerrymice.webappservlet.InvokeServlet;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author ：xsliu
@@ -67,7 +68,7 @@ public class HttpServer {
         OutputStream outputStream = socket.getOutputStream();
         String responseText = StrUtil.format(Constant.textFormat404, uri, uri);
         responseText = Constant.responseHead404 + responseText;
-        byte[] responseBytes = responseText.getBytes("utf-8");
+        byte[] responseBytes = responseText.getBytes(StandardCharsets.UTF_8);
         outputStream.write(responseBytes);
     }
 
@@ -113,7 +114,7 @@ public class HttpServer {
 
             String text = StrUtil.format(Constant.textFormat500, msg, e.toString(), stringBuffer.toString());
             text = Constant.responseHead500 + text;
-            byte[] responseBytes = text.getBytes("utf-8");
+            byte[] responseBytes = text.getBytes(StandardCharsets.UTF_8);
             outputStream.write(responseBytes);
         }catch(IOException e1){
             LogFactory.get().info(e1.toString());
