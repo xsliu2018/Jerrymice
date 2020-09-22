@@ -47,11 +47,11 @@ public class InvokeServlet {
             Class servletClass = context.getWebappClassLoader().loadClass(servletName);
             System.out.println("servletClass:" + servletClass);
             System.out.println("servletClass ClassLoader:" + servletClass.getClassLoader());
-            Object servletObj = ReflectUtil.newInstance(servletClass);
+            Object servletObj = context.getServlet(servletClass);
             // 调用service方法
             ReflectUtil.invoke(servletObj, "service", request, response);
             response.setStatus(Constant.CODE_200);
-        }catch (ClassNotFoundException exception){
+        }catch (Exception exception){
             exception.printStackTrace();
         }
     }

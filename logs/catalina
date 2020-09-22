@@ -1568,3 +1568,59 @@ INFO : Starting ProtocolHandler [http-bio-10087]
 INFO : Starting ProtocolHandler [http-bio-10088]
 09 22, 2020 15:11:40 下午 cn.java.jerrymice.catalina.Server start
 INFO : Server startup in 18 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Host scanContextOnWebAppsFolder
+INFO : Scanning webapps in webapps...
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deploying web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b has finished in 3 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deploying web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/dir1
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/dir1 has finished in 1 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deploying web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/ROOT
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/ROOT has finished in 0 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Host scanContextsByServerXml
+INFO : Scanning webapps from server.xml...
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deploying web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory /Volumes/Data/Nutstore/我的坚果云/JavaProjects/Jerrymice/webapps/b has finished in 0 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deploying web application directory /Volumes/Data/javaweb
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Context deploy
+INFO : Deployment of web application directory /Volumes/Data/javaweb has finished in 2 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : Server version:		JerryMice 1.0.0
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : Server build:		2020-08-03
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : OS:	:		Mac OS X
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : OS version:		10.15.6
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : Architecture:		x86_64
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : Java Home:		/Library/Java/JavaVirtualMachines/jdk1.8.0_261.jdk/Contents/Home/jre
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : JSM Version:		1.8.0_261-b12
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server logJvm
+INFO : JVM Vendor:		Oracle Corporation
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10086]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10087]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector init
+INFO : Initializing Protocol [http-bio-10088]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Service init
+INFO : Initialization processed in 0 ms
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10086]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10087]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Connector start
+INFO : Starting ProtocolHandler [http-bio-10088]
+09 22, 2020 17:08:10 下午 cn.java.jerrymice.catalina.Server start
+INFO : Server startup in 5 ms

@@ -18,6 +18,8 @@ import org.jsoup.select.Elements;
 import org.jsoup.nodes.Document;
 
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -50,6 +52,9 @@ public class Context {
     private ContextFileChangeWatcher watcher;
     // 添加ServletContext
     private ServletContext servletContext;
+    // 用来存储这个Context对应的Servlet,主要是为了让Servlet为单例，
+    // 在访问到达时，通过getServlet方法，查看是否已经存在这个类的实例存在，存在直接返回，不存在则创建
+    private Map<Class<?>, HttpServlet> servletPool;
 
     /**
      * Context的构造方法
@@ -70,7 +75,7 @@ public class Context {
         this.className_servletName = new HashMap<>();
         ClassLoader commonClassLoader = Thread.currentThread().getContextClassLoader();
         this.webappClassLoader = new WebappClassLoader(docBase, commonClassLoader);
-
+        this.servletPool = new HashMap<>();
         deploy();
 
     }
@@ -293,5 +298,15 @@ public class Context {
 
     public ServletContext getServletContext(){
         return this.servletContext;
+    }
+
+    public synchronized HttpServlet getServlet(Class<?> clazz) throws InstantiationException, IllegalAccessException,
+            ServletException {
+        HttpServlet servlet = servletPool.get(clazz);
+        if (servlet == null){
+            servlet = (HttpServlet) clazz.newInstance();
+            servletPool.put(clazz, servlet);
+        }
+        return servlet;
     }
 }
